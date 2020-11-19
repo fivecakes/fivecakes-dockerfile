@@ -1,0 +1,5 @@
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+* * * * *    www-data    php /workspace/www/skynet/artisan skynet_schedule >> /workspace/log/cron/cron.log 2>&1
+

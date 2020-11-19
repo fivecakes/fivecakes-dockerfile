@@ -1,0 +1,18 @@
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+
+
+* * * * *    root                /task_queue.sh >> /workspace/log/cron/cron.log 2>&1
+* * * * *    root    sleep  5 && /task_queue.sh >> /workspace/log/cron/cron.log 2>&1
+* * * * *    root    sleep 10 && /task_queue.sh >> /workspace/log/cron/cron.log 2>&1
+* * * * *    root    sleep 15 && /task_queue.sh >> /workspace/log/cron/cron.log 2>&1
+* * * * *    root    sleep 20 && /task_queue.sh >> /workspace/log/cron/cron.log 2>&1
+* * * * *    root    sleep 25 && /task_queue.sh >> /workspace/log/cron/cron.log 2>&1
+* * * * *    root    sleep 30 && /task_queue.sh >> /workspace/log/cron/cron.log 2>&1
+* * * * *    root    sleep 35 && /task_queue.sh >> /workspace/log/cron/cron.log 2>&1
+* * * * *    root    sleep 40 && /task_queue.sh >> /workspace/log/cron/cron.log 2>&1
+* * * * *    root    sleep 45 && /task_queue.sh >> /workspace/log/cron/cron.log 2>&1
+* * * * *    root    sleep 50 && /task_queue.sh >> /workspace/log/cron/cron.log 2>&1
+* * * * *    root    sleep 55 && /task_queue.sh >> /workspace/log/cron/cron.log 2>&1
+
