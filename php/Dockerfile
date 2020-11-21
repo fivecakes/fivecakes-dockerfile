@@ -1,11 +1,11 @@
-FROM php:7.2-fpm-stretch
+FROM php:7.4-fpm
 
 #配置apt阿里源
 COPY sources.list /etc/apt/sources.list
 
 # 安装依赖
 
-RUN apt update && apt install -y gcc autoconf make vim git cron
+RUN apt update && apt install -y --allow-remove-essential gcc libtinfo5 autoconf make vim git cron
 
 #安装php扩展
 RUN pecl install mongodb-1.5.3
