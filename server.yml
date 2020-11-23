@@ -3,36 +3,30 @@ version: "2"
 # port的取值范围是 0 - 65535(即2的16次方),1024以下是系统保留的,应用程序使用1024-65535
 services:
     nginx:
-        image: swimmingwhale/nginx
-        build: ./nginx
+        image: registry.cn-beijing.aliyuncs.com/fivecakes/nginx
         ports:
             - "80:80"       #http
             - "443:443"     #https
         volumes:
             - /workspace:/workspace
     php:
-        image: swimmingwhale/php
-        build: ./php
+        image: registry.cn-beijing.aliyuncs.com/fivecakes/php
         volumes:
             - /workspace:/workspace
     mongodb:
-        image: swimmingwhale/mongodb
-        build: ./mongodb
+        image: registry.cn-beijing.aliyuncs.com/fivecakes/mongodb
         volumes:
             - /workspace/:/workspace
     mongodb_demo:
-        image: swimmingwhale/mongodb_demo
-        build: ./mongodb_demo
+        image: registry.cn-beijing.aliyuncs.com/fivecakes/mongodb_demo
         volumes:
             - /workspace/:/workspace
     redis:
-        image: swimmingwhale/redis
-        build: ./redis
+        image: registry.cn-beijing.aliyuncs.com/fivecakes/redis
         volumes:
             - /workspace/:/workspace
     nodejs:
-        image: swimmingwhale/nodejs
-        build: ./nodejs
+        image: registry.cn-beijing.aliyuncs.com/fivecakes/nodejs
         #ports:
         #    - "6789:6789"       #math
         volumes:
