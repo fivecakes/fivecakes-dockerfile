@@ -1,9 +1,7 @@
-version: "2"
+version: "3"
 services:
     jupyter:
         image: registry.cn-beijing.aliyuncs.com/fivecakes/jupyter
-        cpus: 0.8
-        mem_limit: "1g"
         ports:
             - "8888:8888"       #jupyterlab
             - "5000:5000"       #flask
@@ -12,3 +10,8 @@ services:
             - /workspace/deploy/:/deploy    
             - /workspace/repository/:/repository
             - /workspace/etc/jupyter/jupyter_notebook_config.py:/root/.jupyter/jupyter_notebook_config.py
+        deploy:
+          resources:
+            limits:
+              cpus: '0.8'
+              memory: '1g'
