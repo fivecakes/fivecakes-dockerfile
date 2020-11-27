@@ -1,7 +1,10 @@
 FROM continuumio/anaconda
 
 RUN conda create -n cling
-RUN conda activate cling
+
+# Make RUN commands use the new environment:
+SHELL ["conda", "run", "-n", "cling", "/bin/bash", "-c"]
+
 RUN conda install jupyterlab
 RUN conda install xeus-cling -c conda-forge
 
