@@ -2,8 +2,8 @@ FROM continuumio/anaconda
 
 RUN conda create -n cling
 RUN conda activate cling
-conda install jupyterlab
-conda install xeus-cling -c conda-forge
+RUN conda install jupyterlab
+RUN conda install xeus-cling -c conda-forge
 
 EXPOSE 8888
 EXPOSE 5000
