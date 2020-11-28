@@ -1,5 +1,6 @@
 FROM continuumio/anaconda
 
+COPY environment.yml .
 RUN conda env create -f environment.yml
 
 # 下面这句取代 RUN conda activate cling
