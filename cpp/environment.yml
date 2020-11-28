@@ -1,10 +1,10 @@
 name: cling
-channels:
-  - conda-forge
+# channels:
+#   - conda-forge
 dependencies:
   - python=3.6
-  - jupyter
-  - jupyterlab
-  - xeus-cling
-  - pip:
-    - jupyter-c-kernel
+  # - jupyter
+  # - jupyterlab
+  # - xeus-cling
+  # - pip:
+  #   - jupyter-c-kernel

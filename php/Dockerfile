@@ -17,6 +17,9 @@ RUN echo "deb http://deb.debian.org/debian stretch-backports main" | tee /etc/ap
 
 RUN apt update && apt install -y certbot python-certbot-nginx -t stretch-backports
 
+# 安装ssh服务,给git用
+RUN apt install openssh-server
+COPY ssh_config /etc/ssh/ssh_config
 
 #导入php配置文件
 COPY php.ini    /usr/local/etc/php/php.ini
@@ -30,7 +33,7 @@ RUN chmod +x /init.sh
 #导入配置文件
 COPY .vimrc /root/.vimrc
 
-
+EXPOSE 5678
 CMD ["/init.sh"]
 WORKDIR /workspace
 RUN usermod -u 1000 www-data
