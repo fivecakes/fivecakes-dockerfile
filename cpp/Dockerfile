@@ -5,7 +5,6 @@ RUN conda env create -f environment.yml
 # 下面这句取代 RUN conda activate cling
 SHELL ["conda", "run", "-n", "cling", "/bin/bash", "-c"]
 
-RUN conda install jupyterlab
 RUN conda install xeus-cling -c conda-forge
 
 EXPOSE 8888
