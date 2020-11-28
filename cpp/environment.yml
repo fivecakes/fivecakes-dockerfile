@@ -1,0 +1,7 @@
+name: cling
+dependencies:
+  - python=3.6
+  - jupyter
+  - jupyterlab
+  # - pip:
+  #   - Flask-Testing

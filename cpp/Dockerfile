@@ -1,8 +1,8 @@
 FROM continuumio/anaconda
 
-RUN conda create -n cling
+RUN conda env create -f environment.yml
 
-# Make RUN commands use the new environment:
+# 下面这句取代 RUN conda activate cling
 SHELL ["conda", "run", "-n", "cling", "/bin/bash", "-c"]
 
 RUN conda install jupyterlab
