@@ -2,6 +2,7 @@ name: cling
 channels:
   - conda-forge
   - defaults
+# conda将所有的工具、第三方包都当做package对待,所以不管什么依赖都可以写在这里
 dependencies:
   - python=3.6
   - jupyterlab
