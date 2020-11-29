@@ -1,7 +1,7 @@
 version: "3"
 services:
     jupyter:
-        image: registry.cn-beijing.aliyuncs.com/fivecakes/jupyter
+        image: registry-vpc.cn-beijing.aliyuncs.com/fivecakes/jupyter
         ports:
             - "8888:8888"       #jupyterlab
             - "5000:5000"       #flask

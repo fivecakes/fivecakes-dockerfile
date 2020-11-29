@@ -1,7 +1,7 @@
 version: "3"
 services:
     cpp:
-        image: registry.cn-beijing.aliyuncs.com/fivecakes/cpp
+        image: registry-vpc.cn-beijing.aliyuncs.com/fivecakes/cpp
         ports:
             - "8888:8888"       #jupyterlab
             - "5000:5000"       #flask

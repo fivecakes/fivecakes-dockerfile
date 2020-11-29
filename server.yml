@@ -3,32 +3,32 @@ version: "3"
 # port的取值范围是 0 - 65535(即2的16次方),1024以下是系统保留的,应用程序使用1024-65535
 services:
     nginx:
-        image: registry.cn-beijing.aliyuncs.com/fivecakes/nginx
+        image: registry-vpc.cn-beijing.aliyuncs.com/fivecakes/nginx
         ports:
             - "80:80"       #http
             - "443:443"     #https
         volumes:
             - /workspace:/workspace
     php:
-        image: registry.cn-beijing.aliyuncs.com/fivecakes/php
+        image: registry-vpc.cn-beijing.aliyuncs.com/fivecakes/php
         volumes:
             - /workspace:/workspace
         ports:
             - "5678:5678"   #为git提供ssh
     mongodb:
-        image: registry.cn-beijing.aliyuncs.com/fivecakes/mongodb
+        image: registry-vpc.cn-beijing.aliyuncs.com/fivecakes/mongodb
         volumes:
             - /workspace/:/workspace
     mongodb_demo:
-        image: registry.cn-beijing.aliyuncs.com/fivecakes/mongodb_demo
+        image: registry-vpc.cn-beijing.aliyuncs.com/fivecakes/mongodb_demo
         volumes:
             - /workspace/:/workspace
     redis:
-        image: registry.cn-beijing.aliyuncs.com/fivecakes/redis
+        image: registry-vpc.cn-beijing.aliyuncs.com/fivecakes/redis
         volumes:
             - /workspace/:/workspace
     nodejs:
-        image: registry.cn-beijing.aliyuncs.com/fivecakes/nodejs
+        image: registry-vpc.cn-beijing.aliyuncs.com/fivecakes/nodejs
         #ports:
         #    - "6789:6789"       #math
         volumes:
