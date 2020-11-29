@@ -15,6 +15,7 @@ RUN apt-get install -y ffmpeg
 # 创建conda环境
 COPY environment.yml .
 COPY condarc /root/.condarc
+RUN conda update conda
 RUN conda env create -f environment.yml
 
 #SHELL ["conda", "run", "-n", "cling", "/bin/bash", "-c"]
