@@ -3,7 +3,7 @@ FROM continuumio/anaconda
 
 # 配置apt-get为阿里源
 COPY sources.list /etc/apt/sources.list
-RUN apt-get update && apt-get install -y --allow-remove-essential libtinfo5 vim
+RUN apt-get update && apt-get install -y --allow-remove-essential libtinfo5 vim 
 COPY .vimrc /root/.vimrc
 
 RUN mkdir -p /root/.pip/
