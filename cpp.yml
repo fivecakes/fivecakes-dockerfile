@@ -1,6 +1,6 @@
 version: "3"
 services:
-    jupyter:
+    cpp:
         image: registry.cn-beijing.aliyuncs.com/fivecakes/cpp
         ports:
             - "8888:8888"       #jupyterlab

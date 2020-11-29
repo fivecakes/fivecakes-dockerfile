@@ -1,6 +1,7 @@
 FROM continuumio/anaconda
 
 COPY environment.yml .
+COPY condarc /root/.condarc
 RUN conda env create -f environment.yml
 
 SHELL ["conda", "run", "-n", "cling", "/bin/bash", "-c"]
