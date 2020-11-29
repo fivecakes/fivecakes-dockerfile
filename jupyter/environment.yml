@@ -23,4 +23,6 @@ dependencies:
     - pydub 
     - keras 
     - tensorflow
-    - beautifulsoup4 html5lib lxml
+    - beautifulsoup4
+    - html5lib
+    - lxml
