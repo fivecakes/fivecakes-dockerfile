@@ -17,6 +17,9 @@ RUN echo "deb http://deb.debian.org/debian stretch-backports main" | tee /etc/ap
 
 RUN apt update && apt install -y certbot python-certbot-nginx -t stretch-backports
 
+# 添加git用户
+RUN adduser git
+
 # 安装ssh服务,给git用
 RUN apt install openssh-server
 COPY ssh_config /etc/ssh/ssh_config
@@ -26,7 +29,6 @@ COPY php.ini    /usr/local/etc/php/php.ini
 COPY php-fpm.conf    /usr/local/etc/php-fpm.d/php-fpm.conf
 COPY crontab    /etc/crontab
 COPY Shanghai    /etc/localtime
-COPY gitconfig    /etc/gitconfig
 COPY init.sh      /init.sh
 RUN chmod +x /init.sh
 
