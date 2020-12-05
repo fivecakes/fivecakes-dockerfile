@@ -1,6 +1,7 @@
 version: "3"
 
-# port的取值范围是 0 - 65535(即2的16次方),1024以下是系统保留的,应用程序使用1024-65535
+# 服务端使用的端口号：0～1023为熟知端口号,1024～49151为登记端口号
+# 客户端使用的端口号：49152～65535
 services:
     nginx:
         image: registry-vpc.cn-beijing.aliyuncs.com/fivecakes/nginx
