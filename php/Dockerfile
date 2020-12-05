@@ -5,7 +5,7 @@ COPY sources.list /etc/apt/sources.list
 
 # 安装依赖
 
-RUN apt update && apt install -y --allow-remove-essential gcc libtinfo5 autoconf make vim git cron
+RUN apt update && apt install -y --allow-remove-essential gcc libtinfo5 autoconf make vim git cron openssh-server
 
 #安装php扩展
 RUN pecl install mongodb-1.5.3
@@ -20,9 +20,6 @@ RUN apt update && apt install -y certbot python-certbot-nginx -t stretch-backpor
 # 添加git用户
 RUN adduser git
 
-# 安装ssh服务,给git用
-RUN apt install -y openssh-server
-COPY ssh_config /etc/ssh/ssh_config
 
 #导入php配置文件
 COPY php.ini    /usr/local/etc/php/php.ini
@@ -34,6 +31,7 @@ RUN chmod +x /init.sh
 
 #导入配置文件
 COPY .vimrc /root/.vimrc
+COPY ssh_config /etc/ssh/ssh_config
 
 EXPOSE 5678
 CMD ["/init.sh"]
