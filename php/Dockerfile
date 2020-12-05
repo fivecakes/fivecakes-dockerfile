@@ -21,7 +21,7 @@ RUN apt update && apt install -y certbot python-certbot-nginx -t stretch-backpor
 RUN adduser git
 
 # 安装ssh服务,给git用
-RUN apt install openssh-server
+RUN apt install -y openssh-server
 COPY ssh_config /etc/ssh/ssh_config
 
 #导入php配置文件
