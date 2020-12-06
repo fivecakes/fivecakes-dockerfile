@@ -5,7 +5,7 @@ touch /workspace/log/php-fpm/access.log /workspace/log/php-fpm/error.log
 
 mkdir -p /workspace/ssh/
 
-if [! -f "/workspace/ssh/authorized_keys" ]; then
+if [ ! -f "/workspace/ssh/authorized_keys" ]; then
 	ssh-keygen -t rsa -N fivecakes -f /workspace/ssh/git@skynet
 	cat /workspace/ssh/git@skynet.pub >> /workspace/ssh/authorized_keys
 	service ssh restart
