@@ -11,7 +11,9 @@ if [ ! -f "/workspace/ssh/authorized_keys" ]; then
 	service ssh restart
 fi
 
+mkdir -p /home/git/.ssh/
 cp /workspace/ssh/authorized_keys /home/git/.ssh/authorized_keys
+chown -R git:git /home/git/.ssh/
 
 # 查找并替换git所在行/bin/bash为/usr/bin/git-shell
 line=`sed -n  '/git:/=' /etc/passwd`
