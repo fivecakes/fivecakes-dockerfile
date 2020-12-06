@@ -4,35 +4,33 @@ version: "3"
 # 客户端使用的端口号：49152～65535
 services:
     nginx:
-        image: registry-vpc.cn-beijing.aliyuncs.com/fivecakes/nginx
+        image: ${REGISTRY}/fivecakes/nginx
         ports:
             - "80:80"       #http
             - "443:443"     #https
         volumes:
-            - /workspace:/workspace
+            - ${WORK_PATH}:/workspace
     php:
-        image: registry-vpc.cn-beijing.aliyuncs.com/fivecakes/php
+        image: ${REGISTRY}/fivecakes/php
         volumes:
-            - /workspace:/workspace
+            - ${WORK_PATH}:/workspace
         ports:
             - "5678:5678"   #为git提供ssh
     mongodb:
-        image: registry-vpc.cn-beijing.aliyuncs.com/fivecakes/mongodb
+        image: ${REGISTRY}/fivecakes/mongodb
         volumes:
-            - /workspace/:/workspace
+            - ${WORK_PATH}:/workspace
     mongodb_demo:
-        image: registry-vpc.cn-beijing.aliyuncs.com/fivecakes/mongodb_demo
+        image: ${REGISTRY}/fivecakes/mongodb_demo
         volumes:
-            - /workspace/:/workspace
+            - ${WORK_PATH}:/workspace
     redis:
-        image: registry-vpc.cn-beijing.aliyuncs.com/fivecakes/redis
+        image: ${REGISTRY}/fivecakes/redis
         volumes:
-            - /workspace/:/workspace
+            - ${WORK_PATH}:/workspace
     nodejs:
-        image: registry-vpc.cn-beijing.aliyuncs.com/fivecakes/nodejs
-        #ports:
-        #    - "6789:6789"       #math
+        image: ${REGISTRY}/fivecakes/nodejs
         volumes:
-            - /workspace/deploy:/deploy
+            - ${WORK_PATH}/deploy:/deploy
 
           

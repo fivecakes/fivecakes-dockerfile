@@ -1,15 +1,15 @@
 version: "3"
 services:
     jupyter:
-        image: registry-vpc.cn-beijing.aliyuncs.com/fivecakes/jupyter
+        image: ${REGISTRY}/fivecakes/jupyter
         ports:
             - "8888:8888"       #jupyterlab
             - "5000:5000"       #flask
         volumes:
-            - /workspace/jupyter/:/jupyter
-            - /workspace/deploy/:/deploy    
-            - /workspace/repository/:/repository
-            - /workspace/etc/jupyter/jupyter_notebook_config.py:/root/.jupyter/jupyter_notebook_config.py
+            - ${WORK_PATH}/jupyter/:/jupyter
+            - ${WORK_PATH}/deploy/:/deploy    
+            - ${WORK_PATH}/repository/:/repository
+            - ${WORK_PATH}/etc/jupyter/jupyter_notebook_config.py:/root/.jupyter/jupyter_notebook_config.py
         deploy:
           resources:
             limits:

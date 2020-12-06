@@ -1,9 +1,9 @@
 version: "3"
 services:
     spider:
-        image: registry-vpc.cn-beijing.aliyuncs.com/fivecakes/spider
+        image: ${REGISTRY}/fivecakes/spider
         volumes:
-            - /workspace/deploy/:/deploy
+            - ${WORK_PATH}/deploy/:/deploy
         deploy:
           resources:
             limits:
