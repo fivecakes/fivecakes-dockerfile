@@ -3,10 +3,20 @@
 mkdir -p /workspace/log/php-fpm/
 touch /workspace/log/php-fpm/access.log /workspace/log/php-fpm/error.log
 
+mkdir -p /workspace/ssh/
+
+if [! -f "/workspace/ssh/authorized_keys" ]; then
+	ssh-keygen -t rsa -N fivecakes -f /workspace/ssh/key4git
+	cat /workspace/ssh/key4git.pub >> /workspace/ssh/authorized_keys
+	service ssh restart
+fi
+
+cp /workspace/ssh/authorized_keys /home/git/.ssh/authorized_keys
 
 # 查找并替换git所在行/bin/bash为/usr/bin/git-shell
 line=`sed -n  '/git:/=' /etc/passwd`
-sed -i "" "${line}s/\/bin\/sh/\/usr\/bin\/git-shell/g" /etc/passwd
+sed -i '${line}d' /etc/passwd
+echo "git:x:1001:1000:,,,:/home/git:/usr/bin/git-shell" >> /etc/passwd
 
 # 临时解决letsencrypt被墙问题
 echo "23.32.3.72     ocsp.int-x3.letsencrypt.org" >> /etc/hosts
