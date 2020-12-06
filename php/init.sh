@@ -8,7 +8,6 @@ mkdir -p /workspace/ssh/
 if [ ! -f "/workspace/ssh/authorized_keys" ]; then
 	ssh-keygen -t rsa -N fivecakes -f /workspace/ssh/git@skynet
 	cat /workspace/ssh/git@skynet.pub >> /workspace/ssh/authorized_keys
-	service ssh restart
 fi
 
 mkdir -p /home/git/.ssh/
@@ -23,5 +22,6 @@ echo "git:x:1001:1000:,,,:/home/git:/usr/bin/git-shell" >> /etc/passwd
 # 临时解决letsencrypt被墙问题
 echo "23.32.3.72     ocsp.int-x3.letsencrypt.org" >> /etc/hosts
 
+/etc/init.d/ssh start
 /etc/init.d/cron start
 /usr/local/sbin/php-fpm

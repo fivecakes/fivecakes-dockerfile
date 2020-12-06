@@ -15,7 +15,7 @@ services:
         volumes:
             - ${WORK_PATH}:/workspace
         ports:
-            - "5678:5678"   #为git提供ssh
+            - "22:5678"   #为git提供ssh
     mongodb:
         image: ${REGISTRY}/fivecakes/mongodb
         volumes:

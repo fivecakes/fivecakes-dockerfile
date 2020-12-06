@@ -28,7 +28,6 @@ RUN chmod +x /init.sh
 
 #导入配置文件
 COPY .vimrc /root/.vimrc
-COPY ssh_config /etc/ssh/ssh_config
 
 EXPOSE 5678
 CMD ["/init.sh"]

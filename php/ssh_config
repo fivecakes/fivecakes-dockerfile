@@ -1,6 +1,0 @@
-Host *
-
-Port 5678
-SendEnv LANG LC_*
-HashKnownHosts yes
-GSSAPIAuthentication yes
