@@ -15,9 +15,9 @@ cp /workspace/ssh/authorized_keys /home/git/.ssh/authorized_keys
 chown -R git:git /home/git/.ssh/
 
 # 查找并替换git所在行/bin/bash为/usr/bin/git-shell
-line=`sed -n  '/git:/=' /etc/passwd`
-sed -i "${line}d" /etc/passwd
-echo "git:x:1001:1000:,,,:/home/git:/usr/bin/git-shell" >> /etc/passwd
+# line=`sed -n  '/git:/=' /etc/passwd`
+# sed -i "${line}d" /etc/passwd
+# echo "git:x:1001:1000:,,,:/home/git:/usr/bin/git-shell" >> /etc/passwd
 
 # 临时解决letsencrypt被墙问题
 echo "23.32.3.72     ocsp.int-x3.letsencrypt.org" >> /etc/hosts

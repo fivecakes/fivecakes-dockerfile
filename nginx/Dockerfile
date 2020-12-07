@@ -33,5 +33,5 @@ COPY .vimrc /root/.vimrc
 
 CMD ["/init.sh"]
 WORKDIR /workspace
-RUN usermod -u 1000 www-data
+RUN useradd -d /home/git -u 1000 -U -s /usr/bin/git-shell git
 
