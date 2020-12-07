@@ -32,8 +32,7 @@ COPY .vimrc /root/.vimrc
 EXPOSE 5678
 CMD ["/init.sh"]
 WORKDIR /workspace
-RUN useradd -d /home/git -u 1000 -U -s /usr/bin/git-shell git
-#RUN usermod -d /home/www-data -s /usr/bin/git-shell www-data
+RUN useradd -d /home/git -u 1000 -g 33 -s /usr/bin/git-shell git
 
 
 
