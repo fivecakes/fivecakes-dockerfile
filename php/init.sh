@@ -12,7 +12,7 @@ fi
 
 mkdir -p /home/git/.ssh/
 cp /workspace/ssh/authorized_keys /home/git/.ssh/authorized_keys
-chown -R git:git /home/git/.ssh/
+chown -R git:www-data /home/git/.ssh/
 
 # 临时解决letsencrypt被墙问题
 echo "23.32.3.72     ocsp.int-x3.letsencrypt.org" >> /etc/hosts
