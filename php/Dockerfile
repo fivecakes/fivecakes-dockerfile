@@ -23,6 +23,7 @@ COPY php.ini    /usr/local/etc/php/php.ini
 COPY php-fpm.conf    /usr/local/etc/php-fpm.d/php-fpm.conf
 COPY crontab    /etc/crontab
 COPY Shanghai    /etc/localtime
+COPY gitconfig    /etc/gitconfig
 COPY init.sh      /init.sh
 RUN chmod +x /init.sh
 
