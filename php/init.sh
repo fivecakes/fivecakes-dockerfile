@@ -10,9 +10,9 @@ if [ ! -f "/workspace/ssh/authorized_keys" ]; then
 	cat /workspace/ssh/key4skynet.pub >> /workspace/ssh/authorized_keys
 fi
 
-mkdir -p /home/www-data/.ssh/
-cp /workspace/ssh/authorized_keys /home/www-data/.ssh/authorized_keys
-chown -R www-data:www-data /home/www-data/.ssh/
+mkdir -p /home/git/.ssh/
+cp /workspace/ssh/authorized_keys /home/git/.ssh/authorized_keys
+chown -R git:git /home/git/.ssh/
 
 # 临时解决letsencrypt被墙问题
 echo "23.32.3.72     ocsp.int-x3.letsencrypt.org" >> /etc/hosts
