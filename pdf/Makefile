@@ -1,8 +1,8 @@
 CONTAINER    := pdf-container
 
 run:
-	#docker stop $(CONTAINER)
-	#docker rm $(CONTAINER)
+	docker stop $(CONTAINER)
+	docker rm $(CONTAINER)
 	docker run --privileged -itd \
                --name $(CONTAINER) \
                -v /tmp:/tmp \
