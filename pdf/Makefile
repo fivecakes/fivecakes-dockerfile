@@ -6,7 +6,7 @@ run:
 	docker run --privileged -itd \
                --name $(CONTAINER) \
                -v /tmp:/tmp \
-               registry.cn-beijing.aliyuncs.com/fivecakes/PyPDF2 \
+               registry.cn-beijing.aliyuncs.com/fivecakes/pdf \
                /bin/bash
 	docker exec -it $(CONTAINER) /bin/bash
 
