@@ -1,4 +1,4 @@
-FROM node:10
+FROM node:11
 
 #启动
 COPY  init.sh      /init.sh
