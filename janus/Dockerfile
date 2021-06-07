@@ -20,3 +20,8 @@ WORKDIR /tmp/libsrtp-2.2.0
 RUN ./configure --prefix=/usr --enable-openssl
 RUN make shared_library && make install
 
+
+COPY janus-gateway-0.11.2.tar.gz /tmp/janus-gateway-0.11.2.tar.gz
+RUN cd /tmp && tar xfv janus-gateway-0.11.2.tar.gz
+WORKDIR /tmp/janus-gateway-0.11.2
+RUN sh autogen.sh && ./configure --prefix=/opt/janus && make && make install
