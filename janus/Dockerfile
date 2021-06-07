@@ -1,7 +1,11 @@
 FROM ubuntu:20.04
 
+ENV DEBIAN_FRONTEND="noninteractive"
+
 RUN sed -i 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list
 RUN apt-get -y update && apt-get -y upgrade && apt-get -y dist-upgrade
+
+RUN apt -y install apt-utils
 
 RUN apt -y install build-essential make gcc-multilib g++-multilib libmicrohttpd-dev libjansson-dev  libssl-dev libsofia-sip-ua-dev libglib2.0-dev libopus-dev libogg-dev libcurl4-openssl-dev liblua5.3-dev libconfig-dev pkg-config gengetopt libtool automake meson git
 
