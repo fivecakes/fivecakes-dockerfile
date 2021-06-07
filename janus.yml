@@ -1,6 +1,5 @@
 version: "3"
 services:
-    jupyter:
+    janus:
+        network_mode: host
         image: ${REGISTRY}/fivecakes/janus
-        ports:
-            - "8088:8088" 
