@@ -10,8 +10,9 @@ RUN apt -y install apt-utils
 RUN apt -y install build-essential make gcc-multilib g++-multilib libmicrohttpd-dev libjansson-dev  libssl-dev libsofia-sip-ua-dev libglib2.0-dev libopus-dev libogg-dev libcurl4-openssl-dev liblua5.3-dev libconfig-dev pkg-config gengetopt libtool automake meson git
 
 COPY libnice.tar.gz /tmp/libnice.tar.gz
-#RUN cd /tmp && tar xfv libnice.tar.gz && cd /tmp/libnice && mkdir build
-#RUN meson --prefix=/usr build && ninja -C build && ninja -C build install
+RUN cd /tmp && tar xfv libnice.tar.gz
+WORKDIR /tmp/libnice
+RUN meson --prefix=/usr build && ninja -C build && ninja -C build install
 
 #COPY libsrtp-2.2.0.tar.gz /tmp/libsrtp-2.2.0.tar.gz
 #RUN tar xfv libsrtp-2.2.0.tar.gz
