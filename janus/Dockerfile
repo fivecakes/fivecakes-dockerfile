@@ -14,15 +14,9 @@ RUN cd /tmp && tar xfv libnice.tar.gz
 WORKDIR /tmp/libnice
 RUN meson --prefix=/usr build && ninja -C build && ninja -C build install
 
-#COPY libsrtp-2.2.0.tar.gz /tmp/libsrtp-2.2.0.tar.gz
-#RUN tar xfv libsrtp-2.2.0.tar.gz
-#WORKDIR /tmp/libsrtp-2.2.0
-#RUN ./configure --prefix=/usr --enable-openssl
-#RUN make shared_library && make install
+COPY libsrtp-2.2.0.tar.gz /tmp/libsrtp-2.2.0.tar.gz
+RUN cd /tmp && tar xfv libsrtp-2.2.0.tar.gz
+WORKDIR /tmp/libsrtp-2.2.0
+RUN ./configure --prefix=/usr --enable-openssl
+RUN make shared_library && make install
 
-#openssl
-#COPY openssl-1.1.1.tar.gz /tmp/openssl-1.1.1.tar.gz
-#WORKDIR /tmp
-#RUN tar -xzvf openssl-1.1.1.tar.gz
-
-# --with-openssl=/tmp/openssl-1.1.1
