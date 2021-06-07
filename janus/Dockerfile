@@ -1,9 +1,11 @@
-FROM debian:stretch
+FROM ubuntu:16.04
 
-# 配置apt-get为阿里源
-COPY sources.list /etc/apt/sources.list
+RUN sed -i 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list
+RUN apt-get -y update && apt-get -y upgrade && apt-get -y dist-upgrade
 
-RUN apt update && apt install -y cron vim libpcre3-dev gcc make autoconf libssl-dev uuid-dev zlib1g-dev
+RUN apt-get install -y build-essential make gcc-multilib g++-multilib
+
+
 
 #openssl
 #COPY openssl-1.1.1.tar.gz /tmp/openssl-1.1.1.tar.gz
