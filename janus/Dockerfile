@@ -3,9 +3,7 @@ FROM ubuntu:20.04
 RUN sed -i 's/archive.ubuntu.com/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list
 RUN apt-get -y update && apt-get -y upgrade && apt-get -y dist-upgrade
 
-RUN apt install -y build-essential make gcc-multilib g++-multilib
-
-RUN apt install libmicrohttpd-dev libjansson-dev  libssl-dev libsrtp-dev libsofia-sip-ua-dev libglib2.0-dev libopus-dev libogg-dev libcurl4-openssl-dev liblua5.3-dev libconfig-dev pkg-config gengetopt libtool automake meson git
+#RUN apt install build-essential make gcc-multilib g++-multilib libmicrohttpd-dev libjansson-dev  libssl-dev libsrtp-dev libsofia-sip-ua-dev libglib2.0-dev libopus-dev libogg-dev libcurl4-openssl-dev liblua5.3-dev libconfig-dev pkg-config gengetopt libtool automake meson git
 
 #RUN git clone https://gitlab.freedesktop.org/libnice/libnice
 #RUN cd libnice
