@@ -32,5 +32,10 @@ services:
         image: ${REGISTRY}/fivecakes/nodejs
         volumes:
             - ${WORK_PATH}/deploy:/deploy
+    janus:
+        #network_mode: host
+        image: ${REGISTRY}/fivecakes/janus
+        volumes:
+            - ${WORK_PATH}/etc/janus/janus.jcfg:/opt/janus/etc/janus/janus.jcfg
 
           

@@ -1,5 +1,0 @@
-version: "3"
-services:
-    janus:
-        network_mode: host
-        image: ${REGISTRY}/fivecakes/janus

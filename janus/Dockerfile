@@ -27,7 +27,5 @@ WORKDIR /tmp/janus-gateway-0.11.2
 RUN sh autogen.sh && ./configure --prefix=/opt/janus && make && make install
 RUN make configs
 
-COPY janus.jcfg /opt/janus/etc/janus/janus.jcfg
-
 WORKDIR /opt/janus/bin
 CMD ["/opt/janus/bin/janus"]
